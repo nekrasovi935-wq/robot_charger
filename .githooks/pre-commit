@@ -1,0 +1,11 @@
+    #!/bin/bash
+    FILE="pyproject.toml"
+    if [ -f "$FILE" ]; then
+        VERSION=$(grep -oP '(?<=version = ")[^"]*' "$FILE")
+        IFS='.' read -r -a parts <<< "$VERSION"
+        parts[2]=$((parts[2] + 1))
+        NEW_VERSION="${parts[0]}.${parts[1]}.${parts[2]}"
+        sed -i "s/version = \"$VERSION\"/version = \"$NEW_VERSION\"/" "$FILE"
+        git add "$FILE"
+        echo "Version bumped to $NEW_VERSION"
+    fi

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  robot_charger:
+    build: .
+    container_name: robot_charger_node
+    network_mode: "host" 
+    volumes:
+      - .:/app
+    environment:
+      - DISPLAY=${DISPLAY} 
+      - ROS_DOMAIN_ID=0
+    command: python main.py --no-window
