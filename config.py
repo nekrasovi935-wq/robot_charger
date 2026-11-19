@@ -1,4 +1,4 @@
-﻿CAMERA_INDEX = 0        
+﻿CAMERA_INDEX = "test.mp4"        
 FRAME_WIDTH = 1280
 FRAME_HEIGHT = 720
 HFOV_DEG = 70.0          
@@ -8,8 +8,8 @@ CAMERA_MATRIX = None
 DIST_COEFFS = None        
 
 
-MARKER_SIZE_M = 0.15      
-TARGET_ID = 0             
+MARKER_SIZE_M = 0.11      
+TARGET_ID = 1            
 ARUCO_DICTIONARY = "DICT_5X5_50"   
 
 CMD_VEL_TOPIC = "/cmd_vel"   
